@@ -26,7 +26,7 @@ const resolvers = {
             if (!user) {
                 throw new AuthenticationError('Please enter a valid email address')
             }
-            const dataPassword = await data.isCorrectPassword(password);
+            const dataPassword = await user.isCorrectPassword(password);
             if(!dataPassword) {
                 throw new AuthenticationError('Incorrect password')
             }
