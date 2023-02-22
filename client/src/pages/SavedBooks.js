@@ -39,6 +39,9 @@ import { removeBookId } from '../utils/localStorage';
 
         // upon success, remove book's id from localStorage
       removeBookId(bookId);
+
+      // reload page
+      window.location.reload();
     } catch (err) {
       console.error(err);
     }
