@@ -13,7 +13,7 @@ import { removeBookId } from '../utils/localStorage';
     const { loading, data } = useQuery(GET_ME);
     const [deleteBook] = useMutation(REMOVE_BOOK);
     const userData = data?.me || {};
-  
+    
     if (!userData?.username) {
       return (
         <h4>
@@ -39,9 +39,7 @@ import { removeBookId } from '../utils/localStorage';
 
         // upon success, remove book's id from localStorage
       removeBookId(bookId);
-
-      // reload page
-      window.location.reload();
+      
     } catch (err) {
       console.error(err);
     }
